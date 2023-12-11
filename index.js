@@ -42,6 +42,7 @@ app.all('*', async (req, res) => {
     res.status(response.status).send(response.data);
   } catch (error) {
     if (error.response) {
+      console.log(`Error response ${error}`)
       res.status(error.response.status).send(error.response.data);
     } else if (error.request) {
       console.log(`Error during request ${error}`)
